@@ -18,6 +18,7 @@ The app will be running at `localhost:4200/` and sends requests to `localhost:80
 
 ### Django
 Create a virtualenv first (needs python 3.6+)
+
 On linux terminal:
 ```
 cd /project/directory/django
