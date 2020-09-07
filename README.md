@@ -17,10 +17,13 @@ npm run start
 The app will be running at `localhost:4200/` and sends requests to `localhost:8000`
 
 ### Django
+Create a virtualenv first (needs python 3.6+)
 On linux terminal:
 ```
 cd /project/directory/django
 source venv/bin/activate
+python -m pip install Django
+python -mpip install djangorestframework
 cd api
 python manage.py migrate
 python manage.py runserver
