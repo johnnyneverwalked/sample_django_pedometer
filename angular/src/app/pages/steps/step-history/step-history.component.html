@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-12 shadow p-3 bg-white border-radius mb-4 form-group" [formGroup]="dateRange">
+    <h3 class="font-weight-bold">Step history</h3>
+    <p>Here you an see your progress and keep track of how many steps you've taken. Please select a date range below.</p>
+    <hr>
+    <div class="d-inline-block mx-1">
+      <label for="from" class="font-weight-bold col-form-label">Date from<span class="text-danger">*</span></label>
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd"
+               id="from" formControlName="date__gte" ngbDatepicker #d1="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" type="button"><i class="la la-calendar"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="d-inline-block mx-1">
+      <label for="to" class="font-weight-bold col-form-label">Date to<span class="text-danger">*</span></label>
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd"
+               id="to" formControlName="date__lte" ngbDatepicker #d2="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"><i class="la la-calendar"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="d-inline-block mx-1">
+      <app-button color="primary"
+                  displayName="View steps taken in this date range"
+                  [disabled]="dateRange.invalid"
+                  (btnClick)="search()"
+                  icon="la-search">
+      </app-button>
+    </div>
+  </div>
+  <ng-container *ngIf="chartData">
+    <div class="col-12 text-center bg-white shadow border-radius">
+      <div class="d-inline-block p-2 w-100" #graphContainer>
+        <app-vertical-bar-chart [data]="chartData"
+                                [height]="500"
+                                [width]="graphContainer.offsetWidth"
+                                [showLegend]="false"
+                                [colorScheme]="['#007bff']"
+                                [showLabels]="{xAxis: true, yAxis: true}"
+                                [showAxis]="{xAxis: true, yAxis: true}">
+        </app-vertical-bar-chart>
+      </div>
+    </div>
+    <div [ngStyle]="{'max-height': '600px'}"
+         class="col-6 overflow-y-auto custom-scroller py-3 mt-3 offset-3 text-center bg-white shadow border-radius">
+      <h5 class="font-weight-bold" *ngIf="!days.length">No steps taken during this period</h5>
+      <ul *ngFor="let day of days" class="list-unstyled">
+        <li class="border-bottom mx-1 p-1 basic-hover">
+          <div class="row text-left">
+            <div class="col"><span class="font-weight-bold">{{day.date|date: 'mediumDate'}}:</span></div>
+            <div class="col"><i class="mx-1 la la-shoe-prints"></i> <span>{{day.steps}}</span></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </ng-container>
+</div>

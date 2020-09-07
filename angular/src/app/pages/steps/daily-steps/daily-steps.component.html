@@ -1,0 +1,47 @@
+<div class="row" [formGroup]="form" *ngIf="form">
+  <div class="col-12 mb-3 p-3 shadow border-radius bg-white">
+    <h3 class="font-weight-bold">Steps by day</h3>
+    <p>
+      Here you can preview how many steps you've taken on a given day and also enter a new step amount for a given day.<br>
+      If you've already taken steps on the date you've selected, those steps will appear on the right part of the screen.
+    </p>
+  </div>
+  <div class="col-6 form-group pt-5 shadow border-radius bg-white">
+    <div>
+      <label for="dp" class="font-weight-bold col-form-label">Select a date<span class="text-danger">*</span></label>
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd"
+               id="dp" formControlName="date" ngbDatepicker #d="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><i class="la la-calendar"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="py-3">
+      <label for="steps" class="font-weight-bold col-form-label">Enter steps for the selected date<span class="text-danger">*</span></label>
+      <div class="input-group">
+        <input class="form-control" placeholder="1 - 50.000" type="number" min="1" max="50000"
+               id="steps" formControlName="steps" [value]="form.value.steps">
+      </div>
+    </div>
+    <div class="text-right py-3">
+      <div class="d-inline text-success font-weight-bold" @fade *ngIf="showSuccess">
+        <i class="mr-1 la la-check-circle"></i>
+        <span class="mr-3">Saved Successfully!</span>
+      </div>
+      <div class="d-inline text-danger font-weight-bold" @fade *ngIf="showError">
+        <i class="mr-1 la la-times-circle"></i>
+        <span class="mr-3">Something went wrong... Please try again</span>
+      </div>
+      <app-button action="save"
+                  [disabled]="disabled"
+                  (btnClick)="save()">
+      </app-button>
+    </div>
+  </div>
+
+  <div *ngIf="day" class="col-4 align-self-center shadow border-radius table-dark text-center offset-1 p-5">
+    <h5>{{day.date|date: 'mediumDate'}}:</h5>
+    <h1 class="font-weight-bold"><i class="la la-shoe-prints"></i><span class="mx-1">{{day?.steps || 0}}</span></h1>
+  </div>
+</div>

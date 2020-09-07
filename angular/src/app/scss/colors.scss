@@ -1,0 +1,60 @@
+$menu_bg: #30323F;
+$main_bg: #F2F3F7;
+$red: #dc3545;
+$green: #28a745;
+$yellow: #ffb822;
+$orange: #ff6a00;
+$purple: #7b1fa2;
+$border: #dee2e6;
+$text: #212529;
+$black: #212529;
+$blue: #007bff;
+$light-blue: #03a9f4;
+$white: #ffffff;
+$brown-darken: #5d4037;
+$teal: #17a2b8;
+$pink: #e396ec;
+$secondary-grey: #212529;
+$grey: #dee2e6;
+$dark-grey: darken($grey, 20%);
+$light-grey: #ebedf2;
+$darken-grey: #b7b7b7;
+$debug-back: #1e1e1e;
+$gradient-purple: linear-gradient(45deg,#7b1fa2,#7c4dff);
+$gradient-teal-pink: linear-gradient(45deg, #17a2b8, #e396ec);
+$gradient-blue: linear-gradient(45deg, #303f9f, #1976d2);
+$gradient-purple-orange: linear-gradient(45deg, #8e24aa, #ff6e40);
+$gradient-red-pink: linear-gradient(45deg, #ff5252, #f48fb1);
+$gradient-red-blue: linear-gradient(45deg, red, blue);
+$gradient-orange: linear-gradient(45deg, #d500f9, #ffa000);
+$gradient-green-teal: linear-gradient(45deg, #43a047, #1de9b6);
+$gradient-blue-green: linear-gradient(45deg, #195d8a, #44eaa5);
+$gradient-grey: linear-gradient(to top, #bdc3c7, #2c3e50);
+$gradient-wiretap: linear-gradient(to right, #F27121, #E94057, #8A2387);
+$gradient-moonlit-asteroid: linear-gradient(to left, #0f2027, #203a43, #2c5364);
+$gradient-midnight-city: linear-gradient(to left, #232526, #414345);
+$youtube: linear-gradient(to right, #e52d27, #b31217);
+$gradient-rainbow: linear-gradient(45deg, #d80911, #d213ba, #2a20c7, #1fd6a3, #b6de17, #ff5252);
+
+.default { background-color: $menu_bg; &:before {background-color: $menu_bg;}}
+.brown { background-color: $brown-darken; &:before {background-color: $brown-darken;}}
+.purple-static { background-color: $purple; &:before {background-color: $purple;}}
+.orange-static { background-color: $orange; &:before {background-color: $orange;}}
+.teal { background-color: $teal; &:before {background-color: $teal;}}
+.pink { background-color: $pink; &:before {background-color: $pink;}}
+.light-blue { background-color: $light-blue; &:before {background-color: $light-blue;}}
+.gradient-purple { background: $gradient-purple;  &:before {background: $gradient-purple;}}
+.gradient-teal-pink { background: $gradient-teal-pink;  &:before {background: $gradient-teal-pink;}}
+.gradient-blue { background: $gradient-blue;  &:before {background: $gradient-blue;}}
+.gradient-red-pink { background: $gradient-red-pink;  &:before {background: $gradient-red-pink;}}
+.gradient-red-blue { background: $gradient-red-blue;  &:before {background: $gradient-red-blue;}}
+.gradient-purple-orange { background: $gradient-purple-orange;  &:before {background: $gradient-purple-orange;}}
+.gradient-green-teal { background: $gradient-green-teal;  &:before {background: $gradient-green-teal;}}
+.gradient-orange { background: $gradient-orange;  &:before {background: $gradient-orange;}}
+.gradient-blue-green { background: $gradient-blue-green;  &:before {background: $gradient-blue-green;}}
+.gradient-grey { background: $gradient-grey;  &:before {background: $gradient-grey;}}
+.gradient-wiretap { background: $gradient-wiretap;  &:before {background: $gradient-wiretap;}}
+.gradient-moonlit-asteroid { background: $gradient-moonlit-asteroid;  &:before {background: $gradient-moonlit-asteroid;}}
+.gradient-midnight-city { background: $gradient-midnight-city;  &:before {background: $gradient-midnight-city;}}
+.gradient-rainbow { background: $gradient-rainbow;  &:before {background: $gradient-rainbow;}}
+.youtube { background: $youtube;  &:before {background: $youtube;}}

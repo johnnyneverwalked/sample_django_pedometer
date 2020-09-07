@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 p-3 mb-5 border-radius shadow">
+      <h3 class="font-weight-bold mb-5"><i class="la la-tachometer-alt mr-1"></i>Welcome to the Step Tracker app!</h3>
+      <p>Here you can enter how many steps you've taken each day and also keep track of your progress.<br>Use the menu on the left to get started!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4 shadow border-radius table-dark text-center offset-4 p-5">
+      <h5>Today's steps:</h5>
+      <h1 class="font-weight-bold"><i class="la la-shoe-prints"></i><span class="mx-1">{{day?.steps || 0}}</span></h1>
+      <app-button class="my-1" [routerLink]="['/steps/daily']" [queryParams]="{date: date}"
+                  *ngIf="!day?.steps" action="edit" displayName="Update today's steps">
+      </app-button>
+    </div>
+  </div>
+</div>
